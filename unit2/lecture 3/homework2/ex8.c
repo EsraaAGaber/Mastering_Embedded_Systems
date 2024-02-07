@@ -1,7 +1,7 @@
 /*
     ex8.c
     Write C Program to make simple calculator to add ,subtract ,multiply or divide using switch cace 
-    Created on 24/2/2023
+    Created on 12/12/2023
     Auther : Esraa abdelgaber
 
 */

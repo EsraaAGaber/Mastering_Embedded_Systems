@@ -1,7 +1,7 @@
 /*
     ex5.c
     Write C Program to check whether  character is an alphabet or not  
-    Created on 24/2/2023
+    Created on 12/12/2023
     Auther : Esraa abdelgaber
 
 */

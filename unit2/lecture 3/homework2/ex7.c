@@ -1,7 +1,7 @@
 /*
     ex7.c
     Write C Program to Find factorial of a number 
-    Created on 24/2/2023
+    Created on 12/12/2023
     Auther : Esraa abdelgaber
 
 */

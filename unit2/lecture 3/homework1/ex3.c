@@ -13,6 +13,6 @@ int main()
     scanf("%d%d", &a, &b);
     fflush(stdin);
     fflush(stdout);
-    printf("Sum: %d", a + b);
+    printf("Sum: %d",a + b);
     return 0;
 }
