@@ -7,7 +7,7 @@ An embedded systems engineer is responsible for designing, developing, and manag
 
 
 ## Content & My Progress
-### First Term ![50%](https://progress-bar.dev/20?title=InProgress)
+### First Term ![50%](https://progress-bar.dev/50?title=InProgress)
 * Unit 1 (Diploma Prerequisites)
   * Understanding The System ![100%](https://progress-bar.dev/100)
   * Install The Tools ![100%](https://progress-bar.dev/100)
