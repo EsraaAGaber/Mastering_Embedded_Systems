@@ -7,7 +7,7 @@ An embedded systems engineer is responsible for designing, developing, and manag
 
 
 ## Content & My Progress
-### First Term ![20%](https://progress-bar.dev/20?title=InProgress)
+### First Term ![50%](https://progress-bar.dev/50?title=InProgress)
 * Unit 1 (Diploma Prerequisites)
   * Understanding The System ![100%](https://progress-bar.dev/100)
   * Install The Tools ![100%](https://progress-bar.dev/100)
@@ -17,9 +17,9 @@ An embedded systems engineer is responsible for designing, developing, and manag
   * Lecture 3: C Basics  ![100%](https://progress-bar.dev/100)
   * Lecture 4: C Arrays & Strings ![70%](https://progress-bar.dev/100)
   * Lecture 5: C Functions ![0%](https://progress-bar.dev/100)
-  * Mid Term 1 ![0%](https://progress-bar.dev/100)
-  * Lecture 6: Struct & Union & Enum ![0%](https://progress-bar.dev/0)
-  * Lecture 7: Pre-processor directives in C ![0%](https://progress-bar.dev/0)
+  * Mid Term 1 ![100%](https://progress-bar.dev/100)
+  * Lecture 6: Struct & Union & Enum ![100%](https://progress-bar.dev/100)
+  * Lecture 7: Pre-processor directives in C ![0%](https://progress-bar.dev/50)
   * Lecture 8: C Pointers ![0%](https://progress-bar.dev/0)
 * Unit 3: Embedded C
   * Lecture 1 ![0%](https://progress-bar.dev/0)
