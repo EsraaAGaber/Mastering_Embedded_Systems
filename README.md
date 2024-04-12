@@ -19,10 +19,10 @@ An embedded systems engineer is responsible for designing, developing, and manag
   * Lecture 5: C Functions ![0%](https://progress-bar.dev/100)
   * Mid Term 1 ![100%](https://progress-bar.dev/100)
   * Lecture 6: Struct & Union & Enum ![100%](https://progress-bar.dev/100)
-  * Lecture 7: Pre-processor directives in C ![0%](https://progress-bar.dev/50)
-  * Lecture 8: C Pointers ![0%](https://progress-bar.dev/0)
+  * Lecture 7: Pre-processor directives in C ![100%](https://progress-bar.dev/100)
+  * Lecture 8: C Pointers ![100%](https://progress-bar.dev/100)
 * Unit 3: Embedded C
-  * Lecture 1 ![0%](https://progress-bar.dev/0)
+  * Lecture 1 ![50%](https://progress-bar.dev/50)
   * Lecture 2 ![0%](https://progress-bar.dev/0)
   * Lecture 3 ![0%](https://progress-bar.dev/0)
   * Lecture 4 ![0%](https://progress-bar.dev/0)
