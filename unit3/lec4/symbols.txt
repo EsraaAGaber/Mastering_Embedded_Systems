@@ -1,0 +1,30 @@
+$ arm-none-eabi-nm.exe learn_in_depth_cortex_m4.elf
+20000800 B _E_BSS
+20000000 R _E_DATA
+00000170 T _E_TEXT
+20000000 B _S_BSS
+20000000 R _S_DATA
+00000170 R g_p_fn_vectors
+000000b8 W H_Fault_Handler
+00000000 T main
+000000b8 W NMI_Handler
+000000b8 T Rest_Handler
+20000000 b stack_top
+
+main.o:
+00000000 T main
+
+startup.o:
+         U _E_BSS
+         U _E_DATA
+         U _E_TEXT
+         U _S_BSS
+         U _S_DATA
+00000000 R g_p_fn_vectors
+00000000 W H_Fault_Handler
+         U main
+00000000 W NMI_Handler
+00000000 T Rest_Handler
+00000000 b stack_top
+
+

@@ -15,7 +15,8 @@ all: $(FILE_NAME).bin $(FILE_NAME).hex
 %.o: %.c
 	 $(CC)gcc.exe -c $(CFLAGS) $(INCS) $< -o $@
 $(FILE_NAME).elf: $(OBJ) $(ASOBJ)
-	 $(CC)ld.exe -T  linker_script.ld -Map=output.map $(OBJ) $(ASOBJ) -o $(FILE_NAME).elf
+	 $(CC)ld.exe -T  linker_script.ld $(OBJ) $(ASOBJ) -o $@ -Map=output.map 
+	 cp $(FILE_NAME).elf $(FILE_NAME).axf
 
 $(FILE_NAME).hex: $(FILE_NAME).elf
 	$(CC)objcopy.exe -O ihex $< $@ 
