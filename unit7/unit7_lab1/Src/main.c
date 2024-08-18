@@ -28,57 +28,82 @@ typedef volatile unsigned int vuint32_t;
 #define RCC_APB2ENR *(vuint32_t*)(RCC_BASE+0x18)
 
 
-
+//port A
 #define GPIOA_BASE 0x40010800
 #define GPIOA_CRH *(vuint32_t*)(GPIOA_BASE+0x04)
 #define GPIOA_CRL *(vuint32_t*)(GPIOA_BASE+0x00)
 #define GPIOA_ODR *(vuint32_t*)(GPIOA_BASE+0x0c)
-#define GPIOA_13 (1UL<<13)
-
-//EXTI
-#define EXTI_BASE 0x40010400
-#define EXTI_IMR *(vuint32_t*)(EXTI_BASE+0x00)
-#define EXTI_RTSR *(vuint32_t*)(EXTI_BASE+0x08)
-#define EXTI_PR *(vuint32_t*)(EXTI_BASE+0x14)
-
-
-#define AFIO_BASE 0x40010000
-#define AFIO_EXTICR1 *(vuint32_t*)(GPIOA_BASE+0x08)
-
-#define NVIC_EXTIE0 *(vuint32_t*)(0xE000E100)
+#define GPIOA_IDR *(vuint32_t*)(GPIOA_BASE+0x08)
+//port B
+#define GPIOB_BASE 0x40010C00
+#define GPIOB_CRH *(vuint32_t*)(GPIOB_BASE+0x04)
+#define GPIOB_CRL *(vuint32_t*)(GPIOB_BASE+0x00)
+#define GPIOB_ODR *(vuint32_t*)(GPIOB_BASE+0x0c)
+#define GPIOB_IDR *(vuint32_t*)(GPIOB_BASE+0x08)
 
  void init_GPIO()
  {
-	 //pin 13 as output
-	 GPIOA_CRH &= 0xff0fffff;
-	GPIOA_CRH |=0x00200000;
-	//pin 0 FLOATING input
-	GPIOA_CRL|=(1<<2);
+
+
+
+ GPIOA_CRL=0;
+ GPIOA_CRH=0;
+ GPIOA_ODR=0;
+
+
+	//A1 input floating 01
+ GPIOA_CRL&=~(0b11<<4);
+	GPIOA_CRL|=(0b01<<6);
+ //B1 output push pull
+		GPIOB_CRL|=(0b01<<4);
+		GPIOB_CRL&=~(0b11<<6);
+
+	// A13 input floating
+	 GPIOA_CRH&=~(0b11<<20);
+		GPIOA_CRH|=(0b01<<22);
+
+
+	//b13 output push pull
+		GPIOB_CRH|=(0b01<<20);
+		GPIOB_CRH&=~(0b11<<22);
+
  }
  void init_clock()
  {
 	 //GPIO enable clock
 	 RCC_APB2ENR |=RCC_IOPAEN;
-	 //AFIOEN enable clock
-	 RCC_APB2ENR |=(1<<0);
-
+	 RCC_APB2ENR |=(1<<3);
+ }
+ void dely(int x)
+ {
+	 unsigned int i,j;
+	 for (i=0;i<x;i++)
+		 for (j=0;j<255;j++);
  }
 int main(void)
 {
 	init_clock();
 	init_GPIO();
+	volatile char flag =1;
+	while (1){
 
-	AFIO_EXTICR1=0x0;
-	EXTI_RTSR|=(1<<0);
-	EXTI_IMR|=(1<<0);
+		if (!(GPIOA_IDR&(1<<1)))
+		{
+			if (flag)
+			GPIOB_ODR^=(1<<1);
+			flag=0;
 
-	NVIC_EXTIE0|=(1<<6);
-	while (1);
+		}
+		else flag=1;
+		if ((GPIOA_IDR&(1<<13)))
+		{
+			GPIOB_ODR^=(1<<13);
+
+
+		}
+
+		dely(10);
+
+	}
 }
-void EXTI0_IRQHandler(void)
-{
-	//toggle led in p13
-	GPIOA_ODR^=(1<<13);
-	EXTI_PR |=(1<<0);
 
-}
